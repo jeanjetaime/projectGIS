@@ -1,0 +1,153 @@
+/* 去除padding */
+
+.navbar {
+    margin-bottom: 0 !important;
+}
+
+.column .navbar .navbar-default {
+    position: relative !important;
+    width: 100% !important;
+}
+
+.container-fluid {
+    position: relative !important;
+    height: 93.8%;
+    width: 100%;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+#myMap {
+    width: 100%;
+    height: 100%;
+}
+
+#mapheader .row {
+    position: relative;
+    width: 100%;
+    margin-left: 0px !important;
+    margin-left: 0px !important;
+}
+
+#mapheader .column .row {
+    position: relative;
+    width: 100%;
+    margin-left: 0px !important;
+    margin-left: 0px !important;
+}
+
+#mapheader {
+    width: 100%;
+}
+
+.col-md-12 {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
+
+/* The zoomslider shall be placed between the zoom-in and zoom-out buttons. */
+
+#myMap .ol-zoom .ol-zoom-out {
+    margin-top: 172px;
+}
+
+#myMap .ol-zoom .ol-zoom-in {
+    margin-top: 0px;
+}
+
+#myMap .ol-control {
+    padding: 0;
+}
+
+#myMap .ol-zoomslider {
+    /* background-color: transparent; */
+    top: 2.3em;
+    height: 170px
+}
+
+#myMap .ol-touch .ol-zoom .ol-zoom-out {
+    margin-top: 200px;
+}
+
+#myMap .ol-zoomslider .ol-unselectable .ol-control {
+    height: 200px;
+}
+
+#myMap .ol-zoom-in.ol-has-tooltip:hover[role=tooltip],
+#myMap .ol-zoom-in.ol-has-tooltip:focus[role=tooltip] {
+    top: 3px;
+}
+
+#myMap .ol-zoom-out.ol-has-tooltip:hover[role=tooltip],
+#myMap .ol-zoom-out.ol-has-tooltip:focus[role=tooltip] {
+    top: 232px;
+}
+
+
+/* popup css */
+
+.ol-popup {
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #cccccc;
+    bottom: 12px;
+    left: -50px;
+    min-width: 280px;
+}
+
+.ol-popup:after,
+.ol-popup:before {
+    top: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.ol-popup:after {
+    border-top-color: white;
+    border-width: 10px;
+    left: 48px;
+    margin-left: -10px;
+}
+
+.ol-popup:before {
+    border-top-color: #cccccc;
+    border-width: 11px;
+    left: 48px;
+    margin-left: -11px;
+}
+
+.ol-popup-closer {
+    text-decoration: none;
+    position: absolute;
+    top: 2px;
+    right: 8px;
+}
+
+.ol-popup-closer:after {
+    content: "✖";
+}
+
+.ol-zoom-extent {
+    right: .5em !important;
+    left: auto !important;
+    top: 4.5em !important;
+}
+
+.ol-full-screen {
+    top: 2.5em !important;
+}
+
+#popup-echarts {
+    width: 600px;
+    height: 400px;
+    display: block;
+    background-color: white;
+}

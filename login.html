@@ -1,0 +1,163 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>用户登录</title>
+    <!-- Bootstrap 核心 CSS 文件 -->
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./lib/v6.0.0-dist/ol.css">
+    <link rel="stylesheet" href="./styles.css">
+    
+    <style>
+        /*web background*/
+        .container {
+            display: table;
+            height: 100%;
+        }
+
+        .row {
+
+            margin-right: 15px;
+            margin-left: 15px;
+            margin-top: 300;
+        }
+        .row.row-bottom{
+           text-align: center
+        }
+        /* centered columns styles */
+        .row-centered {
+            text-align: center;
+        }
+        .gray{
+            color: blue
+        }
+
+        .col-centered {
+            display: inline-block;
+            float: none;
+            text-align: left;
+            margin-right: -4px;
+        }
+        h2{
+              color: rgb(24, 24, 161);
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+    </style>
+    <script>
+            function addPsw(userId,userPsw){
+        var ctn=0;
+        for (var i = 0; i < passwordGroup.length; i++) {
+            if (passwordGroup[i].userName == userId && passwordGroup[i].password == userPsw) {
+                alert("账户已经存在，请勿输入相同密码")
+            }else{ 
+                var a="userId"
+                var b="userPsw"
+                var newUser={userName:userId,password:userPsw}
+            passwordGroup.push(newUser)
+            alert("添加成功")
+            break;
+         
+        }
+    
+        }
+    }
+        var passwordGroup = [{ "userName": "admin", "password": 123456 }, { "userName": "chou", "password": 111111 }]
+        $(function () {
+         $('#confirm').on('click', function(){
+
+            addPsw($("#changeUserid").val(),$("#changePassword").val());
+            
+         })
+            $('#switch').on('click', function () {
+                const ct = 0;
+                for (var i = 0; i < passwordGroup.length; i++) {
+                    if (passwordGroup[i].userName == $('#userid').val() && passwordGroup[i].password == $('#password').val()) {
+                        window.location.href = "./index.html";
+                        ct += ct;
+                    }
+
+
+                }
+                if (ct == 0) {
+                    alert("账户或密码错误")
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <script src="./lib/v6.0.0-dist/ol.js"></script>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel"></h4>
+                </div>
+                <div class="modal-body">
+                    <span class="input-group-addon" id="sizing-addon1"><i class="glyphicon glyphicon-user"
+                        aria-hidden="true"></i></span>
+                <input type="text" class="form-control" id="changeUserid" name="userid" placeholder="请输入用户名" />
+                <span class="input-group-addon" id="sizing-addon1"><i
+                    class="glyphicon glyphicon-lock"></i></span>
+            <input type="password" class="form-control" id="changePassword" name="password" placeholder="请输入密码" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" id="confirm">提交更改</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+    <div class="container-fluid" style="background-image: url('logo.png')">
+        <div class="row row-centered">
+            <div class="well col-md-3 col-centered">
+                <h2 style="text-align:center ">中国沿海气象数据可视化平台</h2>
+                <label >登录：</label>
+                <form:form action="/login" method="post" role="form">
+                    <div class="input-group input-group-md">
+                        <span class="input-group-addon" id="sizing-addon1"><i class="glyphicon glyphicon-user"
+                                aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" id="userid" name="userid" placeholder="请输入用户ID" />
+                    </div>
+                    <div class="input-group input-group-md">
+                        <span class="input-group-addon" id="sizing-addon1"><i
+                                class="glyphicon glyphicon-lock"></i></span>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="请输入密码" />
+                    </div>
+                    <br />
+                    <button type="button" class="btn btn-success btn-block" id="switch">登录</button>
+                    <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#myModal" id="addpsw">增加用户</button>
+                  
+                </form:form>
+            </div>
+        </div>
+        <div class="row row-bottom">
+            "&nbsp;|&nbsp;"
+            <a href="#">关于项目</a>
+            "&nbsp;|&nbsp;"
+            <a href="#" target="_blank">服务条款</a>
+            "&nbsp;|&nbsp;"
+            <a href="#" target="_blank">隐私政策</a>
+            "&nbsp;|&nbsp;"
+            <a href="#" target="_blank">客服中心</a>
+            "&nbsp;|&nbsp;"
+            <a href="#" target="_blank">联系我们</a>
+            "&nbsp;|&nbsp;"
+            <span class="gray">©2020 - 2021 中国民航大学应用数学研究中心 Inc. All Rights Reserved.</span>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
